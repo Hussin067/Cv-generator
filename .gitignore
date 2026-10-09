@@ -1,0 +1,11 @@
+# Root-level ignores; backend/ and frontend/ have their own .gitignore files.
+.env
+.env.*
+!.env.example
+*.pdf
+*.log
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/

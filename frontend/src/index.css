@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+
+@custom-variant rtl (&:where([dir='rtl'], [dir='rtl'] *));
+@custom-variant ltr (&:where([dir='ltr'], [dir='ltr'] *));
+
+@theme {
+  --font-sans: 'Noto Sans', 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: 'Noto Sans Arabic', 'Noto Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* A4 sheet used by the live preview. Margins match the PDF's @page margins (15mm x 16mm). */
+.cv-sheet {
+  background: #ffffff;
+  min-height: 297mm;
+  padding: 15mm 16mm;
+  box-shadow:
+    0 1px 2px rgb(15 23 42 / 0.08),
+    0 4px 16px rgb(15 23 42 / 0.08);
+}
+
+.cv-page-break {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px dashed #94a3b8;
+  pointer-events: none;
+}
+
+.cv-page-break span {
+  position: absolute;
+  right: 6px;
+  top: -9px;
+  background: #ffffff;
+  padding: 0 4px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 10px;
+  color: #64748b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Printing ("Save as PDF"): only the full-size CV is printed, on A4 with the template margins. */
+.print-root {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm 16mm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+  }
+
+  body > *:not(.print-root) {
+    display: none !important;
+  }
+
+  .print-root {
+    display: block;
+  }
+}

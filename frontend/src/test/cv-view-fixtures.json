@@ -1,0 +1,924 @@
+[
+  {
+    "name": "english",
+    "language": "en",
+    "cv": {
+      "personal": {
+        "fullName": "Sara Ahmed",
+        "jobTitle": "Junior Software Engineer",
+        "email": "sara.ahmed@example.com",
+        "phone": "+966 50 000 0000",
+        "location": "Riyadh, Saudi Arabia",
+        "linkedin": "https://linkedin.com/in/sara-example",
+        "github": "https://github.com/sara-example",
+        "portfolio": ""
+      },
+      "summary": "Computer science graduate with hands-on experience building web applications with React and FastAPI.",
+      "education": [
+        {
+          "id": "edu1",
+          "degree": "Bachelor of Science",
+          "major": "Computer Science",
+          "institution": "King Faisal University",
+          "location": "Al-Ahsa",
+          "startDate": "2021-09",
+          "endDate": "2025-06",
+          "expected": false,
+          "gpa": "3.8 / 4.0",
+          "coursework": "Data Structures, Databases, Computer Networks",
+          "achievements": "Dean's list for four semesters"
+        }
+      ],
+      "experience": [
+        {
+          "id": "exp1",
+          "company": "Example Tech",
+          "title": "Software Engineering Intern",
+          "location": "Riyadh",
+          "startDate": "2024-06",
+          "endDate": "2024-08",
+          "current": false,
+          "description": "worked on the website and fixed bugs\nwrote unit tests for the API",
+          "technologies": "React, FastAPI, PostgreSQL"
+        }
+      ],
+      "skills": [
+        {
+          "id": "sk1",
+          "category": "Programming Languages",
+          "items": "Python, JavaScript, SQL"
+        },
+        {
+          "id": "sk2",
+          "category": "Soft Skills",
+          "items": ""
+        }
+      ],
+      "certifications": [],
+      "projects": [],
+      "additional": []
+    },
+    "expected": {
+      "lang": "en",
+      "dir": "ltr",
+      "header": {
+        "name": "Sara Ahmed",
+        "title": "Junior Software Engineer",
+        "contacts": [
+          {
+            "text": "sara.ahmed@example.com",
+            "href": "mailto:sara.ahmed@example.com",
+            "ltr": true
+          },
+          {
+            "text": "+966 50 000 0000",
+            "href": null,
+            "ltr": true
+          },
+          {
+            "text": "Riyadh, Saudi Arabia",
+            "href": null,
+            "ltr": false
+          },
+          {
+            "text": "linkedin.com/in/sara-example",
+            "href": "https://linkedin.com/in/sara-example",
+            "ltr": true
+          },
+          {
+            "text": "github.com/sara-example",
+            "href": "https://github.com/sara-example",
+            "ltr": true
+          }
+        ]
+      },
+      "sections": [
+        {
+          "key": "summary",
+          "heading": "Professional Summary",
+          "kind": "text",
+          "text": "Computer science graduate with hands-on experience building web applications with React and FastAPI."
+        },
+        {
+          "key": "education",
+          "heading": "Education",
+          "kind": "entries",
+          "entries": [
+            {
+              "title": "Bachelor of Science, Computer Science",
+              "subtitle": "King Faisal University",
+              "dates": "Sep 2021 – Jun 2025",
+              "location": "Al-Ahsa",
+              "meta": [
+                {
+                  "label": "GPA",
+                  "value": "3.8 / 4.0",
+                  "ltr": true
+                },
+                {
+                  "label": "Relevant Coursework",
+                  "value": "Data Structures, Databases, Computer Networks",
+                  "ltr": false
+                }
+              ],
+              "description": "",
+              "bullets": [
+                "Dean's list for four semesters"
+              ],
+              "link": null
+            }
+          ]
+        },
+        {
+          "key": "experience",
+          "heading": "Experience",
+          "kind": "entries",
+          "entries": [
+            {
+              "title": "Software Engineering Intern",
+              "subtitle": "Example Tech",
+              "dates": "Jun 2024 – Aug 2024",
+              "location": "Riyadh",
+              "meta": [
+                {
+                  "label": "Technologies",
+                  "value": "React, FastAPI, PostgreSQL",
+                  "ltr": false
+                }
+              ],
+              "description": "",
+              "bullets": [
+                "worked on the website and fixed bugs",
+                "wrote unit tests for the API"
+              ],
+              "link": null
+            }
+          ]
+        },
+        {
+          "key": "skills",
+          "heading": "Skills",
+          "kind": "skills",
+          "rows": [
+            {
+              "label": "Programming Languages",
+              "value": "Python, JavaScript, SQL"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "arabic",
+    "language": "ar",
+    "cv": {
+      "personal": {
+        "fullName": "سارة أحمد",
+        "jobTitle": "مهندسة برمجيات",
+        "email": "sara.ahmed@example.com",
+        "phone": "+966 50 000 0000",
+        "location": "الرياض، المملكة العربية السعودية",
+        "linkedin": "https://linkedin.com/in/sara-example",
+        "github": "",
+        "portfolio": ""
+      },
+      "summary": "خريجة علوم حاسب تمتلك خبرة عملية في تطوير تطبيقات الويب باستخدام React وFastAPI.",
+      "education": [
+        {
+          "id": "edu1",
+          "degree": "بكالوريوس",
+          "major": "علوم الحاسب",
+          "institution": "جامعة الملك فيصل",
+          "location": "",
+          "startDate": "2021-09",
+          "endDate": "2025-06",
+          "expected": false,
+          "gpa": "3.8 / 4.0",
+          "coursework": "",
+          "achievements": ""
+        }
+      ],
+      "experience": [
+        {
+          "id": "exp1",
+          "company": "شركة مثال للتقنية",
+          "title": "متدربة هندسة برمجيات",
+          "location": "",
+          "startDate": "2024-06",
+          "endDate": "",
+          "current": true,
+          "description": "تطوير واجهات المستخدم باستخدام React\nكتابة اختبارات وحدات لواجهة API",
+          "technologies": "React, FastAPI"
+        }
+      ],
+      "skills": [
+        {
+          "id": "sk1",
+          "category": "لغات البرمجة",
+          "items": "Python، JavaScript، SQL"
+        }
+      ],
+      "certifications": [],
+      "projects": [
+        {
+          "id": "p1",
+          "title": "تحليل أداء الشبكات",
+          "type": "research",
+          "description": "دراسة أثر إعدادات التوجيه على زمن الاستجابة",
+          "work": "تصميم تجارب محاكاة باستخدام GNS3",
+          "tools": "GNS3, Wireshark",
+          "outcomes": "",
+          "url": ""
+        }
+      ],
+      "additional": []
+    },
+    "expected": {
+      "lang": "ar",
+      "dir": "rtl",
+      "header": {
+        "name": "سارة أحمد",
+        "title": "مهندسة برمجيات",
+        "contacts": [
+          {
+            "text": "sara.ahmed@example.com",
+            "href": "mailto:sara.ahmed@example.com",
+            "ltr": true
+          },
+          {
+            "text": "+966 50 000 0000",
+            "href": null,
+            "ltr": true
+          },
+          {
+            "text": "الرياض، المملكة العربية السعودية",
+            "href": null,
+            "ltr": false
+          },
+          {
+            "text": "linkedin.com/in/sara-example",
+            "href": "https://linkedin.com/in/sara-example",
+            "ltr": true
+          }
+        ]
+      },
+      "sections": [
+        {
+          "key": "summary",
+          "heading": "الملخص المهني",
+          "kind": "text",
+          "text": "خريجة علوم حاسب تمتلك خبرة عملية في تطوير تطبيقات الويب باستخدام React وFastAPI."
+        },
+        {
+          "key": "education",
+          "heading": "التعليم",
+          "kind": "entries",
+          "entries": [
+            {
+              "title": "بكالوريوس، علوم الحاسب",
+              "subtitle": "جامعة الملك فيصل",
+              "dates": "سبتمبر 2021 – يونيو 2025",
+              "location": "",
+              "meta": [
+                {
+                  "label": "المعدل",
+                  "value": "3.8 / 4.0",
+                  "ltr": true
+                }
+              ],
+              "description": "",
+              "bullets": [],
+              "link": null
+            }
+          ]
+        },
+        {
+          "key": "experience",
+          "heading": "الخبرة العملية",
+          "kind": "entries",
+          "entries": [
+            {
+              "title": "متدربة هندسة برمجيات",
+              "subtitle": "شركة مثال للتقنية",
+              "dates": "يونيو 2024 – حتى الآن",
+              "location": "",
+              "meta": [
+                {
+                  "label": "التقنيات",
+                  "value": "React، FastAPI",
+                  "ltr": false
+                }
+              ],
+              "description": "",
+              "bullets": [
+                "تطوير واجهات المستخدم باستخدام React",
+                "كتابة اختبارات وحدات لواجهة API"
+              ],
+              "link": null
+            }
+          ]
+        },
+        {
+          "key": "skills",
+          "heading": "المهارات",
+          "kind": "skills",
+          "rows": [
+            {
+              "label": "لغات البرمجة",
+              "value": "Python، JavaScript، SQL"
+            }
+          ]
+        },
+        {
+          "key": "projects",
+          "heading": "الأبحاث",
+          "kind": "entries",
+          "entries": [
+            {
+              "title": "تحليل أداء الشبكات",
+              "subtitle": "",
+              "dates": "",
+              "location": "",
+              "meta": [
+                {
+                  "label": "المنهجية",
+                  "value": "GNS3، Wireshark",
+                  "ltr": false
+                }
+              ],
+              "description": "دراسة أثر إعدادات التوجيه على زمن الاستجابة",
+              "bullets": [
+                "تصميم تجارب محاكاة باستخدام GNS3"
+              ],
+              "link": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "edge_cases_en",
+    "language": "en",
+    "cv": {
+      "personal": {
+        "fullName": "Omar Khalid",
+        "jobTitle": "Network Engineer",
+        "email": "omar@example.com",
+        "phone": "",
+        "location": "Dammam",
+        "linkedin": "",
+        "github": "https://github.com/omar-example/",
+        "portfolio": "https://www.omar.example.com/"
+      },
+      "summary": "",
+      "education": [
+        {
+          "id": "e1",
+          "degree": "BSc",
+          "major": "Network Engineering",
+          "institution": "KFU",
+          "location": "",
+          "startDate": "",
+          "endDate": "2026-05",
+          "expected": true,
+          "gpa": "",
+          "coursework": "Routing, switching, routing",
+          "achievements": ""
+        },
+        {
+          "id": "e2",
+          "degree": "",
+          "major": "",
+          "institution": "",
+          "location": "",
+          "startDate": "",
+          "endDate": "",
+          "expected": false,
+          "gpa": "",
+          "coursework": "",
+          "achievements": "orphan line"
+        }
+      ],
+      "experience": [],
+      "skills": [
+        {
+          "id": "s1",
+          "category": "",
+          "items": "Cisco IOS, Wireshark"
+        }
+      ],
+      "certifications": [
+        {
+          "id": "c1",
+          "name": "CCNA",
+          "issuer": "Cisco",
+          "issueDate": "2025-01",
+          "expiryDate": "2028-01",
+          "url": "https://cisco.com/verify/123"
+        },
+        {
+          "id": "c2",
+          "name": "",
+          "issuer": "Ghost issuer",
+          "issueDate": "",
+          "expiryDate": "",
+          "url": ""
+        }
+      ],
+      "projects": [
+        {
+          "id": "p1",
+          "title": "Campus network lab",
+          "type": "project",
+          "description": "",
+          "work": "- Configured VLANs\n• Set up OSPF",
+          "tools": "GNS3،Wireshark",
+          "outcomes": "Reduced outages",
+          "url": "https://github.com/omar-example/lab"
+        },
+        {
+          "id": "p2",
+          "title": "Latency study",
+          "type": "research",
+          "description": "Measured latency.",
+          "work": "",
+          "tools": "Simulation",
+          "outcomes": "",
+          "url": ""
+        }
+      ],
+      "additional": [
+        {
+          "id": "a1",
+          "kind": "languages",
+          "title": "",
+          "items": "Arabic (Native), English (Fluent)"
+        },
+        {
+          "id": "a2",
+          "kind": "custom",
+          "title": "",
+          "items": "hidden because untitled"
+        },
+        {
+          "id": "a3",
+          "kind": "volunteer",
+          "title": "",
+          "items": "Mentored first-year students"
+        },
+        {
+          "id": "a4",
+          "kind": "awards",
+          "title": "",
+          "items": ""
+        }
+      ]
+    },
+    "expected": {
+      "lang": "en",
+      "dir": "ltr",
+      "header": {
+        "name": "Omar Khalid",
+        "title": "Network Engineer",
+        "contacts": [
+          {
+            "text": "omar@example.com",
+            "href": "mailto:omar@example.com",
+            "ltr": true
+          },
+          {
+            "text": "Dammam",
+            "href": null,
+            "ltr": false
+          },
+          {
+            "text": "github.com/omar-example",
+            "href": "https://github.com/omar-example/",
+            "ltr": true
+          },
+          {
+            "text": "omar.example.com",
+            "href": "https://www.omar.example.com/",
+            "ltr": true
+          }
+        ]
+      },
+      "sections": [
+        {
+          "key": "education",
+          "heading": "Education",
+          "kind": "entries",
+          "entries": [
+            {
+              "title": "BSc, Network Engineering",
+              "subtitle": "KFU",
+              "dates": "Expected May 2026",
+              "location": "",
+              "meta": [
+                {
+                  "label": "Relevant Coursework",
+                  "value": "Routing, switching",
+                  "ltr": false
+                }
+              ],
+              "description": "",
+              "bullets": [],
+              "link": null
+            }
+          ]
+        },
+        {
+          "key": "skills",
+          "heading": "Skills",
+          "kind": "skills",
+          "rows": [
+            {
+              "label": "",
+              "value": "Cisco IOS, Wireshark"
+            }
+          ]
+        },
+        {
+          "key": "certifications",
+          "heading": "Certifications",
+          "kind": "entries",
+          "entries": [
+            {
+              "title": "CCNA",
+              "subtitle": "Cisco",
+              "dates": "Jan 2025 · Expires Jan 2028",
+              "location": "",
+              "meta": [],
+              "description": "",
+              "bullets": [],
+              "link": {
+                "href": "https://cisco.com/verify/123",
+                "text": "cisco.com/verify/123"
+              }
+            }
+          ]
+        },
+        {
+          "key": "projects",
+          "heading": "Projects & Research",
+          "kind": "entries",
+          "entries": [
+            {
+              "title": "Campus network lab",
+              "subtitle": "",
+              "dates": "",
+              "location": "",
+              "meta": [
+                {
+                  "label": "Tools",
+                  "value": "GNS3, Wireshark",
+                  "ltr": false
+                }
+              ],
+              "description": "",
+              "bullets": [
+                "Configured VLANs",
+                "Set up OSPF",
+                "Reduced outages"
+              ],
+              "link": {
+                "href": "https://github.com/omar-example/lab",
+                "text": "github.com/omar-example/lab"
+              }
+            },
+            {
+              "title": "Latency study",
+              "subtitle": "",
+              "dates": "",
+              "location": "",
+              "meta": [
+                {
+                  "label": "Methodology",
+                  "value": "Simulation",
+                  "ltr": false
+                }
+              ],
+              "description": "Measured latency.",
+              "bullets": [],
+              "link": null
+            }
+          ]
+        },
+        {
+          "key": "additional-a1",
+          "heading": "Languages",
+          "kind": "inline",
+          "text": "Arabic (Native), English (Fluent)"
+        },
+        {
+          "key": "additional-a3",
+          "heading": "Volunteer Experience",
+          "kind": "list",
+          "items": [
+            "Mentored first-year students"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "edge_cases_ar",
+    "language": "ar",
+    "cv": {
+      "personal": {
+        "fullName": "Omar Khalid",
+        "jobTitle": "Network Engineer",
+        "email": "omar@example.com",
+        "phone": "",
+        "location": "Dammam",
+        "linkedin": "",
+        "github": "https://github.com/omar-example/",
+        "portfolio": "https://www.omar.example.com/"
+      },
+      "summary": "",
+      "education": [
+        {
+          "id": "e1",
+          "degree": "BSc",
+          "major": "Network Engineering",
+          "institution": "KFU",
+          "location": "",
+          "startDate": "",
+          "endDate": "2026-05",
+          "expected": true,
+          "gpa": "",
+          "coursework": "Routing, switching, routing",
+          "achievements": ""
+        },
+        {
+          "id": "e2",
+          "degree": "",
+          "major": "",
+          "institution": "",
+          "location": "",
+          "startDate": "",
+          "endDate": "",
+          "expected": false,
+          "gpa": "",
+          "coursework": "",
+          "achievements": "orphan line"
+        }
+      ],
+      "experience": [],
+      "skills": [
+        {
+          "id": "s1",
+          "category": "",
+          "items": "Cisco IOS, Wireshark"
+        }
+      ],
+      "certifications": [
+        {
+          "id": "c1",
+          "name": "CCNA",
+          "issuer": "Cisco",
+          "issueDate": "2025-01",
+          "expiryDate": "2028-01",
+          "url": "https://cisco.com/verify/123"
+        },
+        {
+          "id": "c2",
+          "name": "",
+          "issuer": "Ghost issuer",
+          "issueDate": "",
+          "expiryDate": "",
+          "url": ""
+        }
+      ],
+      "projects": [
+        {
+          "id": "p1",
+          "title": "Campus network lab",
+          "type": "project",
+          "description": "",
+          "work": "- Configured VLANs\n• Set up OSPF",
+          "tools": "GNS3،Wireshark",
+          "outcomes": "Reduced outages",
+          "url": "https://github.com/omar-example/lab"
+        },
+        {
+          "id": "p2",
+          "title": "Latency study",
+          "type": "research",
+          "description": "Measured latency.",
+          "work": "",
+          "tools": "Simulation",
+          "outcomes": "",
+          "url": ""
+        }
+      ],
+      "additional": [
+        {
+          "id": "a1",
+          "kind": "languages",
+          "title": "",
+          "items": "Arabic (Native), English (Fluent)"
+        },
+        {
+          "id": "a2",
+          "kind": "custom",
+          "title": "",
+          "items": "hidden because untitled"
+        },
+        {
+          "id": "a3",
+          "kind": "volunteer",
+          "title": "",
+          "items": "Mentored first-year students"
+        },
+        {
+          "id": "a4",
+          "kind": "awards",
+          "title": "",
+          "items": ""
+        }
+      ]
+    },
+    "expected": {
+      "lang": "ar",
+      "dir": "rtl",
+      "header": {
+        "name": "Omar Khalid",
+        "title": "Network Engineer",
+        "contacts": [
+          {
+            "text": "omar@example.com",
+            "href": "mailto:omar@example.com",
+            "ltr": true
+          },
+          {
+            "text": "Dammam",
+            "href": null,
+            "ltr": false
+          },
+          {
+            "text": "github.com/omar-example",
+            "href": "https://github.com/omar-example/",
+            "ltr": true
+          },
+          {
+            "text": "omar.example.com",
+            "href": "https://www.omar.example.com/",
+            "ltr": true
+          }
+        ]
+      },
+      "sections": [
+        {
+          "key": "education",
+          "heading": "التعليم",
+          "kind": "entries",
+          "entries": [
+            {
+              "title": "BSc، Network Engineering",
+              "subtitle": "KFU",
+              "dates": "متوقع مايو 2026",
+              "location": "",
+              "meta": [
+                {
+                  "label": "المقررات ذات الصلة",
+                  "value": "Routing، switching",
+                  "ltr": false
+                }
+              ],
+              "description": "",
+              "bullets": [],
+              "link": null
+            }
+          ]
+        },
+        {
+          "key": "skills",
+          "heading": "المهارات",
+          "kind": "skills",
+          "rows": [
+            {
+              "label": "",
+              "value": "Cisco IOS، Wireshark"
+            }
+          ]
+        },
+        {
+          "key": "certifications",
+          "heading": "الشهادات المهنية",
+          "kind": "entries",
+          "entries": [
+            {
+              "title": "CCNA",
+              "subtitle": "Cisco",
+              "dates": "يناير 2025 · تنتهي يناير 2028",
+              "location": "",
+              "meta": [],
+              "description": "",
+              "bullets": [],
+              "link": {
+                "href": "https://cisco.com/verify/123",
+                "text": "cisco.com/verify/123"
+              }
+            }
+          ]
+        },
+        {
+          "key": "projects",
+          "heading": "المشاريع والأبحاث",
+          "kind": "entries",
+          "entries": [
+            {
+              "title": "Campus network lab",
+              "subtitle": "",
+              "dates": "",
+              "location": "",
+              "meta": [
+                {
+                  "label": "الأدوات",
+                  "value": "GNS3، Wireshark",
+                  "ltr": false
+                }
+              ],
+              "description": "",
+              "bullets": [
+                "Configured VLANs",
+                "Set up OSPF",
+                "Reduced outages"
+              ],
+              "link": {
+                "href": "https://github.com/omar-example/lab",
+                "text": "github.com/omar-example/lab"
+              }
+            },
+            {
+              "title": "Latency study",
+              "subtitle": "",
+              "dates": "",
+              "location": "",
+              "meta": [
+                {
+                  "label": "المنهجية",
+                  "value": "Simulation",
+                  "ltr": false
+                }
+              ],
+              "description": "Measured latency.",
+              "bullets": [],
+              "link": null
+            }
+          ]
+        },
+        {
+          "key": "additional-a1",
+          "heading": "اللغات",
+          "kind": "inline",
+          "text": "Arabic (Native)، English (Fluent)"
+        },
+        {
+          "key": "additional-a3",
+          "heading": "الأعمال التطوعية",
+          "kind": "list",
+          "items": [
+            "Mentored first-year students"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "name_only",
+    "language": "en",
+    "cv": {
+      "personal": {
+        "fullName": "Name Only",
+        "jobTitle": "",
+        "email": "",
+        "phone": "",
+        "location": "",
+        "linkedin": "",
+        "github": "",
+        "portfolio": ""
+      },
+      "summary": "",
+      "education": [],
+      "experience": [],
+      "skills": [],
+      "certifications": [],
+      "projects": [],
+      "additional": []
+    },
+    "expected": {
+      "lang": "en",
+      "dir": "ltr",
+      "header": {
+        "name": "Name Only",
+        "title": "",
+        "contacts": []
+      },
+      "sections": []
+    }
+  }
+]
