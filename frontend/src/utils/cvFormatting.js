@@ -109,6 +109,41 @@ export function normalizeUrl(value) {
   }
 }
 
+const LINKEDIN_SECTIONS = new Set(['in', 'company', 'school', 'showcase'])
+
+/**
+ * Keeps only the meaningful part of a link (no https://, www., tracking parameters or trailing slash):
+ *   https://www.linkedin.com/in/name-123?utm_source=share  ->  linkedin.com/in/name-123
+ *   https://github.com/user/repo/tree/main?tab=readme     ->  github.com/user/repo
+ * Other sites keep their host, path and non-tracking query. Invalid input is returned unchanged (trimmed).
+ */
+export function shortenUrl(value) {
+  const full = normalizeUrl(value)
+  if (!full) return str(value)
+  const url = new URL(full)
+  const host = url.hostname.toLowerCase().replace(/^www\./, '').replace(/^[a-z]{2}\.linkedin\.com$/, 'linkedin.com')
+  const parts = url.pathname.split('/').filter(Boolean).map((part) => {
+    try {
+      return decodeURIComponent(part)
+    } catch {
+      return part
+    }
+  })
+
+  if (host === 'linkedin.com') {
+    const index = parts.findIndex((part) => LINKEDIN_SECTIONS.has(part.toLowerCase()))
+    if (index >= 0 && parts[index + 1]) return `linkedin.com/${parts[index].toLowerCase()}/${parts[index + 1]}`
+  }
+  if (host === 'github.com') return ['github.com', ...parts.slice(0, 2)].join('/')
+
+  for (const key of [...url.searchParams.keys()]) {
+    if (/^(utm_|fbclid$|gclid$|igshid$|si$|trk)/i.test(key)) url.searchParams.delete(key)
+  }
+  const query = url.searchParams.toString()
+  // Other sites keep their own host (some only answer on www.).
+  return [url.hostname.toLowerCase(), ...parts].join('/') + (query ? `?${query}` : '')
+}
+
 export function displayUrl(url) {
   let text = url.includes('://') ? url.split('://').slice(1).join('://') : url
   if (text.startsWith('www.')) text = text.slice(4)
@@ -122,10 +157,10 @@ function contacts(personal) {
   const email = str(personal.email)
   if (email) items.push({ text: email, href: `mailto:${email}`, ltr: true })
   if (str(personal.phone)) items.push({ text: str(personal.phone), href: null, ltr: true })
-  if (str(personal.location)) items.push({ text: str(personal.location), href: null, ltr: false })
   for (const key of ['linkedin', 'github', 'portfolio']) {
-    const url = normalizeUrl(personal[key])
-    if (url) items.push({ text: displayUrl(url), href: url, ltr: true })
+    if (!normalizeUrl(personal[key])) continue
+    const short = shortenUrl(personal[key])
+    items.push({ text: short, href: `https://${short}`, ltr: true })
   }
   return items
 }
@@ -215,7 +250,7 @@ function projectSection(cv, lang) {
         ltr: false,
       })
     }
-    const url = normalizeUrl(p.url)
+    const url = normalizeUrl(p.url) ? shortenUrl(p.url) : ''
     return {
       title: str(p.title),
       subtitle: '',
@@ -224,7 +259,7 @@ function projectSection(cv, lang) {
       meta,
       description: str(p.description),
       bullets: [...splitLines(p.work), ...splitLines(p.outcomes)],
-      link: url ? { href: url, text: displayUrl(url) } : null,
+      link: url ? { href: `https://${url}`, text: url } : null,
     }
   })
   return { heading, entries }

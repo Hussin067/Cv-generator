@@ -2,6 +2,7 @@ import { FlaskConical, FolderGit2, Plus } from 'lucide-react'
 import { newProject } from '../../data/sectionDefinitions'
 import { useBuilder } from '../../hooks/useBuilder'
 import { useI18n } from '../../hooks/useI18n'
+import { shortenUrl } from '../../utils/cvFormatting'
 import Button from '../ui/Button'
 import { SelectField, TextArea, TextField } from '../ui/Field'
 import { EmptyHint, EntryCard, SectionCard } from '../ui/SectionCard'
@@ -84,6 +85,10 @@ export default function ProjectsResearchForm() {
               dir="ltr"
               value={entry.url}
               onChange={set('url')}
+              onBlur={() => {
+                const short = shortenUrl(entry.url)
+                if (short !== entry.url) actions.updateEntry('projects', entry.id, { url: short })
+              }}
               error={urlError && t[urlError]}
               optionalLabel={t.optional}
               placeholder="https://…"

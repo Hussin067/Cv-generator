@@ -8,7 +8,6 @@ export const emptyPersonal = () => ({
   jobTitle: '',
   email: '',
   phone: '',
-  location: '',
   linkedin: '',
   github: '',
   portfolio: '',
@@ -95,4 +94,4 @@ export const SKILL_CATEGORY_PRESETS = {
 export const ADDITIONAL_KINDS = ['volunteer', 'awards', 'publications', 'coursework', 'languages', 'custom']
 
 /** Editor sections, in display order. `key` matches the editor anchor ids. */
-export const EDITOR_SECTIONS = ['personal', 'summary', 'education', 'experience', 'skills', 'certifications', 'projects', 'additional', 'job']
+export const EDITOR_SECTIONS = ['personal', 'summary', 'education', 'experience', 'skills', 'certifications', 'projects', 'additional']

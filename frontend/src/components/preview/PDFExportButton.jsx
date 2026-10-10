@@ -7,20 +7,19 @@ import Button from '../ui/Button'
  * Opens the browser's print dialog for the CV. The user picks "Save as PDF".
  * Everything happens locally: the CV is never uploaded anywhere.
  */
-export default function PDFExportButton({ cv, lang, hasErrors, onStatus, size = 'md', className = '' }) {
+export default function PDFExportButton({ cv, lang, hasErrors, onAttempt, onStatus, size = 'md', className = '' }) {
   const { t } = useI18n()
 
   const handleClick = () => {
-    if (!cv.personal.fullName.trim()) {
-      onStatus?.({ tone: 'warning', text: t.nameRequiredForPdf })
-      document.getElementById('section-personal')?.scrollIntoView({ block: 'start', behavior: 'smooth' })
-      return
-    }
     if (hasErrors) {
+      // Reveal "required" messages, then take the user to the first problem.
+      onAttempt?.()
       onStatus?.({ tone: 'warning', text: t.fixErrorsForPdf })
-      const invalid = document.querySelector('[aria-invalid="true"]')
-      invalid?.scrollIntoView({ block: 'center', behavior: 'smooth' })
-      invalid?.focus({ preventScroll: true })
+      setTimeout(() => {
+        const invalid = document.querySelector('[aria-invalid="true"]')
+        invalid?.scrollIntoView({ block: 'center', behavior: 'smooth' })
+        invalid?.focus({ preventScroll: true })
+      }, 0)
       return
     }
 

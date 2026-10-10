@@ -8,7 +8,6 @@
         "jobTitle": "Junior Software Engineer",
         "email": "sara.ahmed@example.com",
         "phone": "+966 50 000 0000",
-        "location": "Riyadh, Saudi Arabia",
         "linkedin": "https://linkedin.com/in/sara-example",
         "github": "https://github.com/sara-example",
         "portfolio": ""
@@ -74,11 +73,6 @@
             "text": "+966 50 000 0000",
             "href": null,
             "ltr": true
-          },
-          {
-            "text": "Riyadh, Saudi Arabia",
-            "href": null,
-            "ltr": false
           },
           {
             "text": "linkedin.com/in/sara-example",
@@ -178,7 +172,6 @@
         "jobTitle": "مهندسة برمجيات",
         "email": "sara.ahmed@example.com",
         "phone": "+966 50 000 0000",
-        "location": "الرياض، المملكة العربية السعودية",
         "linkedin": "https://linkedin.com/in/sara-example",
         "github": "",
         "portfolio": ""
@@ -250,11 +243,6 @@
             "text": "+966 50 000 0000",
             "href": null,
             "ltr": true
-          },
-          {
-            "text": "الرياض، المملكة العربية السعودية",
-            "href": null,
-            "ltr": false
           },
           {
             "text": "linkedin.com/in/sara-example",
@@ -367,7 +355,6 @@
         "jobTitle": "Network Engineer",
         "email": "omar@example.com",
         "phone": "",
-        "location": "Dammam",
         "linkedin": "",
         "github": "https://github.com/omar-example/",
         "portfolio": "https://www.omar.example.com/"
@@ -489,18 +476,13 @@
             "ltr": true
           },
           {
-            "text": "Dammam",
-            "href": null,
-            "ltr": false
-          },
-          {
             "text": "github.com/omar-example",
-            "href": "https://github.com/omar-example/",
+            "href": "https://github.com/omar-example",
             "ltr": true
           },
           {
-            "text": "omar.example.com",
-            "href": "https://www.omar.example.com/",
+            "text": "www.omar.example.com",
+            "href": "https://www.omar.example.com",
             "ltr": true
           }
         ]
@@ -632,7 +614,6 @@
         "jobTitle": "Network Engineer",
         "email": "omar@example.com",
         "phone": "",
-        "location": "Dammam",
         "linkedin": "",
         "github": "https://github.com/omar-example/",
         "portfolio": "https://www.omar.example.com/"
@@ -754,18 +735,13 @@
             "ltr": true
           },
           {
-            "text": "Dammam",
-            "href": null,
-            "ltr": false
-          },
-          {
             "text": "github.com/omar-example",
-            "href": "https://github.com/omar-example/",
+            "href": "https://github.com/omar-example",
             "ltr": true
           },
           {
-            "text": "omar.example.com",
-            "href": "https://www.omar.example.com/",
+            "text": "www.omar.example.com",
+            "href": "https://www.omar.example.com",
             "ltr": true
           }
         ]
@@ -897,7 +873,6 @@
         "jobTitle": "",
         "email": "",
         "phone": "",
-        "location": "",
         "linkedin": "",
         "github": "",
         "portfolio": ""

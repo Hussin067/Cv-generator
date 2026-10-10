@@ -35,6 +35,7 @@ export default function BuilderPage({ uiLang, onUiLangChange, onHome }) {
   const [mobileView, setMobileView] = useState('editor')
   const [status, setStatus] = useState(null)
   const [previewOpen, setPreviewOpen] = useState(false)
+  const [exportAttempted, setExportAttempted] = useState(false) // show 'required' errors only after a download attempt
   const statusTimer = useRef(null)
 
   const errors = useMemo(() => validateCv(cv), [cv])
@@ -57,11 +58,12 @@ export default function BuilderPage({ uiLang, onUiLangChange, onHome }) {
     setSession((n) => n + 1)
     setMobileView('editor')
     setPreviewOpen(false)
+    setExportAttempted(false)
     notify({ tone: 'success', text: t.cleared })
   }
 
-  const contextValue = { cv, lang, state, actions, errors, notify }
-  const pdfButton = (size) => <PDFExportButton cv={cv} lang={lang} hasErrors={hasErrors} onStatus={notify} size={size} />
+  const contextValue = { cv, lang, state, actions, errors, exportAttempted, notify }
+  const pdfButton = (size) => <PDFExportButton cv={cv} lang={lang} hasErrors={hasErrors} onAttempt={() => setExportAttempted(true)} onStatus={notify} size={size} />
 
   return (
     <BuilderContext.Provider value={contextValue}>

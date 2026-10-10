@@ -168,6 +168,29 @@ const en = {
   invalidEmail: 'Enter a valid email address.',
   invalidUrl: 'Enter a valid web address (https://…).',
   invalidDateOrder: 'End date is before the start date.',
+  invalidPhone: 'Enter a valid phone number (7–15 digits, e.g. +966 50 000 0000).',
+  requiredField: 'This field is required.',
+  linkHint: 'Paste any link; it is shortened to the important part automatically.',
+
+  // Summary prompt generator
+  promptGenerator: 'Summary prompt generator',
+  promptIntro: 'Creates a ready-made prompt for writing your professional summary with an AI assistant such as ChatGPT. The fields are filled from your CV; review them and add your strengths. This app does not send the prompt anywhere.',
+  promptCareerLevel: 'Career level',
+  promptChoose: 'Choose…',
+  careerLevels: { Student: 'Student', 'Fresh graduate': 'Fresh graduate', 'Entry-level': 'Entry-level', 'Mid-level': 'Mid-level', Senior: 'Senior' },
+  promptLanguage: 'Summary language',
+  promptField: 'Field or job title',
+  promptTargetRole: 'Target job or industry',
+  promptEducation: 'Education',
+  promptSkills: 'Key skills',
+  promptExperience: 'Work experience, internships, or projects',
+  promptStrengths: 'Top strengths',
+  promptStrengthsHint: 'e.g. problem solving, teamwork, attention to detail',
+  promptOutput: 'Your prompt',
+  promptCopy: 'Copy prompt',
+  promptCopied: 'Copied',
+  promptRefill: 'Refill from CV',
+  promptHowTo: 'Paste the prompt into your AI assistant, then copy the summary it returns into the Summary field above. Review it and remove anything that is not accurate.',
 }
 
 const ar = {
@@ -331,6 +354,28 @@ const ar = {
   invalidEmail: 'أدخل بريدًا إلكترونيًا صحيحًا.',
   invalidUrl: 'أدخل رابطًا صحيحًا (https://…).',
   invalidDateOrder: 'تاريخ النهاية يسبق تاريخ البداية.',
+  invalidPhone: 'أدخل رقم هاتف صحيحًا (من 7 إلى 15 رقمًا، مثل: ‎+966 50 000 0000).',
+  requiredField: 'هذا الحقل مطلوب.',
+  linkHint: 'الصق أي رابط، وسيُختصر تلقائيًا إلى الجزء المهم.',
+
+  promptGenerator: 'مولّد طلب الملخص',
+  promptIntro: 'ينشئ طلبًا جاهزًا (Prompt) لكتابة ملخصك المهني باستخدام مساعد ذكاء اصطناعي مثل ChatGPT. تُملأ الحقول من سيرتك؛ راجعها وأضف نقاط قوتك. لا يرسل هذا التطبيق الطلب إلى أي جهة.',
+  promptCareerLevel: 'المستوى المهني',
+  promptChoose: 'اختر…',
+  careerLevels: { Student: 'طالب', 'Fresh graduate': 'خريج حديث', 'Entry-level': 'مبتدئ', 'Mid-level': 'متوسط الخبرة', Senior: 'خبير' },
+  promptLanguage: 'لغة الملخص',
+  promptField: 'المجال أو المسمى الوظيفي',
+  promptTargetRole: 'الوظيفة أو القطاع المستهدف',
+  promptEducation: 'التعليم',
+  promptSkills: 'المهارات الرئيسية',
+  promptExperience: 'الخبرة العملية أو التدريب أو المشاريع',
+  promptStrengths: 'أبرز نقاط القوة',
+  promptStrengthsHint: 'مثال: حل المشكلات، العمل الجماعي، الدقة',
+  promptOutput: 'الطلب الجاهز',
+  promptCopy: 'نسخ الطلب',
+  promptCopied: 'تم النسخ',
+  promptRefill: 'إعادة التعبئة من السيرة',
+  promptHowTo: 'الصق الطلب في مساعد الذكاء الاصطناعي، ثم انسخ الملخص الناتج إلى حقل الملخص أعلاه. راجعه واحذف أي معلومة غير دقيقة.',
 }
 
 export const STRINGS = { en, ar }

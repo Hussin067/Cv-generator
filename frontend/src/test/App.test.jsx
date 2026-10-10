@@ -99,9 +99,15 @@ describe('CV builder', () => {
     })
     const user = await openBuilder()
     await user.click(screen.getAllByRole('button', { name: 'Download PDF' })[0])
-    expect(print).not.toHaveBeenCalled() // a full name is required first
+    expect(print).not.toHaveBeenCalled() // required fields are empty
+
+    // Name, email and phone are required: their errors appear only after the first attempt.
+    expect(screen.getAllByText('This field is required.')).toHaveLength(3)
 
     await user.type(screen.getByLabelText(/Full name/), 'Sara Ahmed')
+    await user.type(screen.getByLabelText(/Email/), 'sara@example.com')
+    await user.type(screen.getByLabelText(/Phone/), '+966 50 000 0000')
+    expect(screen.queryByText('This field is required.')).not.toBeInTheDocument()
     await user.click(screen.getAllByRole('button', { name: 'Download PDF' })[0])
     expect(print).toHaveBeenCalledTimes(1)
     // The print-only copy of the CV is rendered outside the app root.
@@ -112,11 +118,70 @@ describe('CV builder', () => {
   it('blocks printing while fields are invalid', async () => {
     const print = vi.spyOn(window, 'print').mockImplementation(() => {})
     const user = await openBuilder()
+    // Required-field errors stay hidden on a fresh form.
+    expect(screen.queryByText('This field is required.')).not.toBeInTheDocument()
     await user.type(screen.getByLabelText(/Full name/), 'Sara Ahmed')
     await user.type(screen.getByLabelText(/Email/), 'not-an-email')
+    await user.type(screen.getByLabelText(/Phone/), '12ab')
     await user.click(screen.getAllByRole('button', { name: 'Download PDF' })[0])
     expect(print).not.toHaveBeenCalled()
     expect(screen.getByText('Enter a valid email address.')).toBeInTheDocument()
+    expect(screen.getByText(/Enter a valid phone number/)).toBeInTheDocument()
+  })
+
+  it('has no location field in personal information', async () => {
+    await openBuilder()
+    const personal = document.getElementById('section-personal')
+    expect(within(personal).queryByLabelText(/Location/)).not.toBeInTheDocument()
+  })
+
+  it('shortens long LinkedIn and GitHub links when the field loses focus', async () => {
+    const user = await openBuilder()
+    const linkedin = screen.getByLabelText(/LinkedIn/)
+    await user.click(linkedin)
+    await user.paste('https://www.linkedin.com/in/hussin-alswuij-94752b379?utm_source=share_via&utm_content=profile&utm_medium=member_ios')
+    await user.tab()
+    expect(linkedin).toHaveValue('linkedin.com/in/hussin-alswuij-94752b379')
+
+    const github = screen.getByLabelText(/GitHub/)
+    await user.click(github)
+    await user.paste('https://github.com/Hussin067?tab=repositories')
+    await user.tab()
+    expect(github).toHaveValue('github.com/Hussin067')
+
+    await user.type(screen.getByLabelText(/Full name/), 'H')
+    expect(within(preview()).getByText('linkedin.com/in/hussin-alswuij-94752b379').closest('a')).toHaveAttribute(
+      'href',
+      'https://linkedin.com/in/hussin-alswuij-94752b379',
+    )
+  })
+
+  it('generates a summary prompt from the CV and copies it', async () => {
+    const user = await openBuilder()
+    // Installed after userEvent.setup(), which replaces navigator.clipboard with its own stub.
+    const writeText = vi.spyOn(navigator.clipboard, 'writeText')
+    await user.type(screen.getByLabelText(/Target job title/), 'SOC Analyst')
+    await user.click(screen.getByRole('button', { name: 'Add category' }))
+    await user.type(screen.getByLabelText('Skills'), 'Splunk, Wireshark')
+
+    await user.click(screen.getByRole('button', { name: 'Summary prompt generator' }))
+    const dialog = screen.getByRole('dialog', { name: 'Summary prompt generator' })
+    await user.selectOptions(within(dialog).getByLabelText('Career level'), 'Fresh graduate')
+    await user.type(within(dialog).getByLabelText('Top strengths'), 'Problem solving')
+
+    const prompt = within(dialog).getByLabelText('Your prompt').value
+    expect(prompt).toContain('* Career level: Fresh graduate')
+    expect(prompt).toContain('* Field or job title: SOC Analyst')
+    expect(prompt).toContain('* Key skills: Splunk, Wireshark')
+    expect(prompt).toContain('* Top strengths: Problem solving')
+    expect(prompt).toContain('* Education: Not provided')
+    expect(prompt).toContain('Generate the summary in: English.')
+    expect(prompt).not.toMatch(/\{\{/)
+
+    await user.click(within(dialog).getByRole('button', { name: 'Copy prompt' }))
+    expect(writeText).toHaveBeenCalledWith(prompt)
+    expect(within(dialog).getByRole('button', { name: 'Copied' })).toBeInTheDocument()
+    expect(fetchMock).not.toHaveBeenCalled()
   })
 
   it('switches the interface to Arabic independently of the CV language', async () => {
