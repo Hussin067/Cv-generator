@@ -61,7 +61,9 @@ body {
   }
 }
 
-/* Printing ("Save as PDF"): only the full-size CV is printed, on A4 with the template margins. */
+/* Printing ("Save as PDF"): only the full-size CV is printed, on A4.
+ * margin: 0 removes the browser's own header and footer (date, title, URL, page number);
+ * the CV margins are recreated inside the page by .print-root padding and the .print-margin rows. */
 .print-root {
   display: none;
 }
@@ -69,11 +71,13 @@ body {
 @media print {
   @page {
     size: A4;
-    margin: 15mm 16mm;
+    margin: 0;
   }
 
   html,
   body {
+    margin: 0 !important;
+    padding: 0 !important;
     background: #ffffff !important;
   }
 
@@ -83,5 +87,20 @@ body {
 
   .print-root {
     display: block;
+    padding: 0 16mm;
+  }
+
+  .print-layout {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .print-layout td {
+    padding: 0;
+    vertical-align: top;
+  }
+
+  .print-layout .print-margin {
+    height: 15mm;
   }
 }

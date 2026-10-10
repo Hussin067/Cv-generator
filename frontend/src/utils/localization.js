@@ -162,7 +162,7 @@ const en = {
   pageBreak: 'Page break (approx.)',
   nameRequiredForPdf: 'Enter your full name to download the PDF.',
   fixErrorsForPdf: 'Fix the highlighted fields before downloading.',
-  printHint: 'In the print window, choose “Save as PDF” as the destination and turn off “Headers and footers”.',
+  printHint: 'In the print window, choose “Save as PDF” as the destination, then click Save.',
 
   // Errors
   invalidEmail: 'Enter a valid email address.',
@@ -170,6 +170,9 @@ const en = {
   invalidDateOrder: 'End date is before the start date.',
   invalidPhone: 'Enter a valid phone number (7–15 digits, e.g. +966 50 000 0000).',
   requiredField: 'This field is required.',
+  monthPlaceholder: 'Month',
+  yearPlaceholder: 'Year',
+  monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   linkHint: 'Paste any link; it is shortened to the important part automatically.',
 
   // Summary prompt generator
@@ -349,13 +352,16 @@ const ar = {
   pageBreak: 'فاصل صفحة (تقريبي)',
   nameRequiredForPdf: 'أدخل اسمك الكامل لتنزيل ملف PDF.',
   fixErrorsForPdf: 'صحّح الحقول المميزة قبل التنزيل.',
-  printHint: 'في نافذة الطباعة، اختر «حفظ بتنسيق PDF» كوجهة، وألغِ تفعيل «الرؤوس والتذييلات».',
+  printHint: 'في نافذة الطباعة، اختر «حفظ بتنسيق PDF» كوجهة، ثم اضغط حفظ.',
 
   invalidEmail: 'أدخل بريدًا إلكترونيًا صحيحًا.',
   invalidUrl: 'أدخل رابطًا صحيحًا (https://…).',
   invalidDateOrder: 'تاريخ النهاية يسبق تاريخ البداية.',
   invalidPhone: 'أدخل رقم هاتف صحيحًا (من 7 إلى 15 رقمًا، مثل: ‎+966 50 000 0000).',
   requiredField: 'هذا الحقل مطلوب.',
+  monthPlaceholder: 'الشهر',
+  yearPlaceholder: 'السنة',
+  monthNames: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'],
   linkHint: 'الصق أي رابط، وسيُختصر تلقائيًا إلى الجزء المهم.',
 
   promptGenerator: 'مولّد طلب الملخص',

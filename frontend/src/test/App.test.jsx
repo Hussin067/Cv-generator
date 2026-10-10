@@ -129,6 +129,24 @@ describe('CV builder', () => {
     expect(screen.getByText(/Enter a valid phone number/)).toBeInTheDocument()
   })
 
+  it('picks dates with month and year dropdowns', async () => {
+    const user = await openBuilder()
+    await user.type(screen.getByLabelText(/Full name/), 'Sara Ahmed')
+    await user.click(screen.getByRole('button', { name: 'Add experience' }))
+    await user.type(screen.getByLabelText('Company or organization'), 'Example Tech')
+
+    // A month alone is not enough; the date appears once the year is chosen too.
+    await user.selectOptions(screen.getByLabelText('Start date'), 'June')
+    expect(within(preview()).queryByText(/Jun/)).not.toBeInTheDocument()
+    await user.selectOptions(screen.getByLabelText('Start date – Year'), '2024')
+    await user.click(screen.getByLabelText('I currently work here'))
+    expect(within(preview()).getByText('Jun 2024 – Present')).toBeInTheDocument()
+
+    // Clearing the month removes the date again.
+    await user.selectOptions(screen.getByLabelText('Start date'), 'Month')
+    expect(within(preview()).queryByText(/Jun 2024/)).not.toBeInTheDocument()
+  })
+
   it('has no location field in personal information', async () => {
     await openBuilder()
     const personal = document.getElementById('section-personal')

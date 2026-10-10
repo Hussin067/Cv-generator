@@ -1,4 +1,5 @@
-import { useId } from 'react'
+import { useId, useState } from 'react'
+import { useI18n } from '../../hooks/useI18n'
 
 const inputClass = (error) =>
   `block w-full rounded-md border bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-sky-600 ${
@@ -86,23 +87,73 @@ export function SelectField({ label, value, onChange, options, hint, className }
   )
 }
 
+// Years offered in date dropdowns: from 1970 to a few years ahead (for expected graduation dates).
+const YEARS = (() => {
+  const years = []
+  for (let y = new Date().getFullYear() + 8; y >= 1970; y -= 1) years.push(String(y))
+  return years
+})()
+
+/**
+ * Month + year picker built from two plain dropdowns. It looks the same in every browser,
+ * shows month names in the interface language, and stores "YYYY-MM" ('' until both parts are chosen).
+ */
 export function MonthField({ label, value, onChange, error, disabled, optionalLabel, className }) {
   const id = useId()
+  const { t } = useI18n()
+  // Keeps a half-finished choice (only month or only year) until the other part is picked.
+  const [draft, setDraft] = useState({ month: '', year: '' })
+  const [valueYear, valueMonth] = value ? value.split('-') : ['', '']
+  const month = value ? valueMonth : draft.month
+  const year = value ? valueYear : draft.year
+
+  const update = (nextMonth, nextYear) => {
+    if (nextMonth && nextYear) {
+      setDraft({ month: '', year: '' })
+      onChange(`${nextYear}-${nextMonth}`)
+    } else {
+      setDraft({ month: nextMonth, year: nextYear })
+      if (value) onChange('')
+    }
+  }
+
+  const selectClass = `${inputClass(error)} disabled:bg-slate-100 disabled:text-slate-400`
+
   return (
     <FieldShell {...{ id, label, error, optionalLabel, className }}>
-      <input
-        id={id}
-        type="month"
-        dir="ltr"
-        min="1950-01"
-        max="2100-12"
-        value={value}
-        disabled={disabled}
-        onChange={(event) => onChange(event.target.value)}
-        aria-invalid={error ? true : undefined}
-        aria-describedby={error ? `${id}-error` : undefined}
-        className={`${inputClass(error)} disabled:bg-slate-100 disabled:text-slate-400`}
-      />
+      <div className="grid grid-cols-[3fr_2fr] gap-2">
+        <select
+          id={id}
+          value={month}
+          disabled={disabled}
+          onChange={(event) => update(event.target.value, year)}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={error ? `${id}-error` : undefined}
+          className={selectClass}
+        >
+          <option value="">{t.monthPlaceholder}</option>
+          {t.monthNames.map((name, index) => (
+            <option key={name} value={String(index + 1).padStart(2, '0')}>
+              {name}
+            </option>
+          ))}
+        </select>
+        <select
+          value={year}
+          disabled={disabled}
+          onChange={(event) => update(month, event.target.value)}
+          aria-label={`${label} – ${t.yearPlaceholder}`}
+          aria-invalid={error ? true : undefined}
+          className={selectClass}
+        >
+          <option value="">{t.yearPlaceholder}</option>
+          {YEARS.map((y) => (
+            <option key={y} value={y}>
+              {y}
+            </option>
+          ))}
+        </select>
+      </div>
     </FieldShell>
   )
 }
